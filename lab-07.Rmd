@@ -3,6 +3,8 @@ title: "Lab 07 - University of Edinburgh Art Collection"
 author: "Insert your name here"
 date: "Insert date here"
 output: github_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 ### Load packages and data
@@ -10,6 +12,12 @@ output: github_document
 ```{r load-packages, message = FALSE}
 library(tidyverse) 
 library(skimr)
+library(rvest)
+library(robotstxt)
+```
+
+```{r}
+paths_allowed("https://collections.ed.ac.uk/art)")
 ```
 
 ```{r load-data, message = FALSE, eval = FALSE}
