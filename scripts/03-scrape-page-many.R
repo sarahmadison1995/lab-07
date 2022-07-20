@@ -16,4 +16,4 @@ uoe_art <- map_dfr(urls, scrape_page)
 
 # write out data frame ---------------------------------------------------------
 
-write_csv(uoe_art, path = "data/uoe-art.csv")
+write_csv(uoe_art, file = "data/uoe-art.csv")
