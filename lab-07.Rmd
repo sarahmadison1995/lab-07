@@ -31,7 +31,7 @@ uoe_art <- read_csv("data/uoe-art.csv")
 uoe_art <- uoe_art %>%
   separate(title, into = c("title", "date"), sep = "\\(") %>%
   mutate(year = str_remove(date, "\\)") %>% as.numeric()) %>%
-  select(title, artist, year, ___)
+  select(title, artist, year, link)
 ```
 
 ### Exercise 10
@@ -41,8 +41,28 @@ Add code chunks as needed.
 Don't forget to label your code chunk.
 Do not use spaces in code chunk labels.
 
+
+115 have artist info missing. 1402 have year info missing. 
+
 ### Exercise 11
 
-...
+ggplot(uoe_art, aes(x = year)) +
+geom_hist
+```{r}
+uoe_art %>%
+  ggplot(uoe_art, aes(x = year)) +
+geom_histogram()
+```
 
+### Exercise 13
 Add exercise headings as needed.
+```{r}
+uoe_art %>%
+  count(artist) %>%
+  arrange(desc(n))
+```
+
+```{r}
+  dplyr::filter(uoe_art, grepl('Child|child', title))
+```
+
